@@ -1,0 +1,137 @@
+body {
+    background-color: rgb(248, 228, 241);
+   height: 100vh;
+   margin: 0;
+}
+
+.sky-wrap {
+    height: 25%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    overflow: hidden;
+    
+}
+
+.cloud1 {
+    position: absolute;
+    margin-top: 70px;
+    width: 350px;
+    height: 120px;
+    top: 50%;
+    transform: traslateY(-50%);
+    background: #ECEFF1;
+    background-color: rgb(174, 228, 228);
+    box-shadow: 10px 10px rgba(25, 25, 25, 0.2);
+    border-radius: 100px;
+}
+
+
+.cloud1::after, .cloud1::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    background: inherit;
+    border-radius: inherit;
+   
+}
+
+.cloud1::after {
+    width: 100px;
+    height: 100px;
+    top: -120px;
+    left: -120px;
+    z-index: -1;
+}
+
+.cloud1::before {
+    width: 180px;
+    height: 180px;
+    top: -80px;
+    left: 130px;
+} 
+
+.c1:nth-of-type(2){
+    margin-left: 175px;
+}
+
+@-webkit-keyframes
+animateCloud1 {
+    0% {
+        margin-left: 1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@-moz-keyframes 
+animateCloud1 {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes animateCloud1 
+{
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+.c1 {
+    animation: animateCloud1 18s linear infinite;
+    transform: scale(0.65);
+}
+
+.c3 {
+    animation: animateCloud1 10s linear infinite;
+    transform: scale(0.5); 
+}
+
+.c2 {
+    animation: animateCloud1 22s linear infinite;
+
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+}
+
+.c1::nth-of-type(even) {
+    animation: animateCloud1 15s linear infinite;
+
+    -webkit-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    transform: scale(0.25);
+}
+
+.c2:nth-of-type(even) {
+    animation: animateCloud1 32s linear infinite;
+
+    -webkit-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    transform: scale(0.25);
+}
+
+
+/* Before:: To make the clouds, it will probably be overlapping divs
+    in the shape of circles with different background highlights. 
+    Border-radius of round all sides
+    
+    NOTES::
+        Pseudo-elements allow a developer to design specific parts of an element 
+        seperately from the whole
+        
+        the ::before and ::after psuedo elements need content, which can be empty strings
+        to set width and height, we set the display as in-line block
+        
+        MAKING IT MOVE::
+            */
