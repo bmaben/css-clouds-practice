@@ -1,137 +1,247 @@
+/* background */
+
+
 body {
     background-color: rgb(248, 228, 241);
-   height: 100vh;
-   margin: 0;
-}
-
-.sky-wrap {
-    height: 25%;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  
+  .sky-wrap {
+    height: 23%;
     width: 100%;
     position: fixed;
     left: 0;
     top: 0;
     z-index: -1;
+    margin-top: 25px;
+    background: linear-gradient(to bottom, #ff5f94, #feb47b);
     overflow: hidden;
-    
-}
-
-.cloud1 {
+  }
+  
+  
+  .title {
+    position: absolute;
+    margin: 10% 50%;
+  }
+  
+  
+  /* individual clouds */
+  
+  
+  .cloud {
     position: absolute;
     margin-top: 70px;
     width: 350px;
     height: 120px;
     top: 50%;
     transform: traslateY(-50%);
-    background: #ECEFF1;
-    background-color: rgb(174, 228, 228);
+    background: radial-gradient(circle, #80deea, #d7f7fc);
     box-shadow: 10px 10px rgba(25, 25, 25, 0.2);
     border-radius: 100px;
-}
-
-
-.cloud1::after, .cloud1::before {
+  }
+  
+  
+  .cloud2 {
+    position: absolute;
+    margin-top: 70px;
+    width: 350px;
+    height: 120px;
+    top: 50%;
+    transform: traslateY(-50%);
+    background: radial-gradient(circle, rgb(11, 74, 74), rgb(185, 234, 234)) ;
+    box-shadow: 10px 10px rgba(25, 25, 25, 0.2);
+    border-radius: 100px;
+  }
+  
+  
+  .cloud3 {
+    position: absolute;
+    margin-top: 70px;
+    width: 350px;
+    height: 120px;
+    top: 70%;
+    transform: traslateY(-50%);
+    background: #eceff1;
+    background: radial-gradient(circle,rgb(24, 221, 221), rgb(206, 241, 241) );
+    box-shadow: 10px 10px rgba(25, 25, 25, 0.2);
+    border-radius: 100px;
+  }
+  
+  
+  .cloud::after,
+  .cloud::before {
     content: "";
     position: relative;
     display: inline-block;
-    background: inherit;
-    border-radius: inherit;
-   
-}
-
-.cloud1::after {
+    border-radius: 50%;
+  }
+  
+  
+  .cloud::after {
     width: 100px;
     height: 100px;
     top: -120px;
     left: -120px;
     z-index: -1;
-}
-
-.cloud1::before {
+    background: linear-gradient(to right, #d7f7fc, #afeaf1);
+  }
+  
+  
+  .cloud::before {
+    width: 180px;
+    height: 180px;
+    top: -70px;
+    left: 130px;
+    z-index: -1;
+    background: radial-gradient(circle, #afeaf1, #9fe0e9);
+  }
+  
+  
+  .cloud2::after,
+  .cloud2::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+   
+    border-radius: inherit;
+  }
+  
+  
+  .cloud2::after {
+    width: 100px;
+    height: 100px;
+    top: -120px;
+    left: -120px;
+    z-index: -1;
+    background: linear-gradient(to right, rgb(185, 234, 234), rgb(11, 74, 74)) ;
+  }
+  
+  
+  .cloud2::before {
     width: 180px;
     height: 180px;
     top: -80px;
     left: 130px;
-} 
-
-.c1:nth-of-type(2){
-    margin-left: 175px;
-}
-
-@-webkit-keyframes
-animateCloud1 {
+    z-index: -1;
+    background: linear-gradient(to left, rgb(185, 243, 234), rgb(11, 74, 74));
+  }
+  
+  
+  .cloud3::after,
+  .cloud3::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    border-radius: inherit;
+    z-index: -1;
+  }
+  
+  
+  .cloud3::after {
+    width: 100px;
+    height: 100px;
+    top: -120px;
+    left: -120px;
+    background: linear-gradient(to right, rgb(206, 241, 241), rgb(24, 221, 221));
+   
+  }
+  
+  
+  .cloud3::before {
+    width: 180px;
+    height: 180px;
+    top: -80px;
+    left: 130px;
+    background: linear-gradient(to left, rgb(206, 241, 241), rgb(24, 221, 221));
+  }
+  
+  
+  /* animation */
+  
+  
+  @keyframes animateCloud1 {
     0% {
-        margin-left: 1000px;
+      margin-left: -1000px;
+      margin-top: 75px;
+    }
+    50% {
+      margin-top: 0px;
     }
     100% {
-        margin-left: 100%;
+      margin-left: 100%;
+      margin-top: 75px;
     }
-}
-
-@-moz-keyframes 
-animateCloud1 {
+  }
+  
+  
+  @keyframes animateCloud2 {
     0% {
-        margin-left: -1000px;
+      margin-left: -1000px;
+      margin-top: 0px;
+    }
+    25% {
+      margin-top: 25px;
+    }
+    50% {
+      margin-top: 75px;
     }
     100% {
-        margin-left: 100%;
+      margin-left: 100%;
+      margin-top: 0px;
     }
-}
-
-@keyframes animateCloud1 
-{
-    0% {
-        margin-left: -1000px;
-    }
-    100% {
-        margin-left: 100%;
-    }
-}
-
-.c1 {
-    animation: animateCloud1 18s linear infinite;
+  }
+  
+  
+  .c1 {
+    animation: animateCloud1 58s linear infinite;
     transform: scale(0.65);
-}
-
-.c3 {
-    animation: animateCloud1 10s linear infinite;
-    transform: scale(0.5); 
-}
-
-.c2 {
-    animation: animateCloud1 22s linear infinite;
-
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
+  }
+  
+  
+  .c3 {
+    animation: animateCloud1 50s linear infinite;
+    transform: scale(0.5);
+  }
+  
+  
+  .c2 {
+    animation: animateCloud2 22s linear infinite;
     transform: scale(0.75);
-}
-
-.c1::nth-of-type(even) {
-    animation: animateCloud1 15s linear infinite;
-
-    -webkit-transform: scale(0.25);
-    -moz-transform: scale(0.25);
+  }
+  
+  
+  .c4 {
+    animation: animateCloud1 35s linear infinite;
+  
+  
     transform: scale(0.25);
-}
-
-.c2:nth-of-type(even) {
-    animation: animateCloud1 32s linear infinite;
-
-    -webkit-transform: scale(0.25);
-    -moz-transform: scale(0.25);
-    transform: scale(0.25);
-}
-
-
-/* Before:: To make the clouds, it will probably be overlapping divs
-    in the shape of circles with different background highlights. 
-    Border-radius of round all sides
-    
-    NOTES::
-        Pseudo-elements allow a developer to design specific parts of an element 
-        seperately from the whole
-        
-        the ::before and ::after psuedo elements need content, which can be empty strings
-        to set width and height, we set the display as in-line block
-        
-        MAKING IT MOVE::
-            */
+  }
+  
+  
+  .c5 {
+    animation: animateCloud2 24s linear infinite;
+    transform: scale(0.15);
+  }
+  
+  
+  .c6 {
+    animation: animateCloud1 30s linear infinite;
+    transform: scale(0.5);
+  }
+  
+  
+  .c7 {
+    animation: animateCloud1 39s linear infinite;
+    transform: scale(0.35);
+  }
+  
+  
+  .c8 {
+    animation: animateCloud1 45s linear infinite;
+    transform: scale(0.75);
+  }
+  
+  
+  
