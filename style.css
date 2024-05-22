@@ -2,7 +2,7 @@
 
 
 body {
-    background-color: rgb(248, 228, 241);
+    background: radial-gradient(circle, rgb(245, 186, 224), rgb(248, 208, 234) );
     height: 100vh;
     margin: 0;
   }
@@ -24,7 +24,11 @@ body {
   .title {
     position: absolute;
     margin: 10% 50%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
+
   
   
   /* individual clouds */
@@ -188,7 +192,7 @@ body {
       margin-top: 0px;
     }
     50% {
-      margin-top: 10px;
+      margin-top: 3px;
     }
     100% {
       margin-left: 100%;
@@ -216,7 +220,7 @@ body {
       margin-top: -15px;
     }
     50% {
-      margin-top: 20px;
+      margin-top: 50px;
     }
     100% {
       margin-left: 100%;
@@ -252,13 +256,13 @@ body {
   
 
   .c1 {
-    animation: animateCloud1 20s ease-in-out infinite;
+    animation: animateCloud1 40s ease-in-out infinite;
     transform: scale(0.25);
   }
   
   
   .c3 {
-    animation: animateCloud2 28s ease-in-out infinite;
+    animation: animateCloud2 48s ease-in-out infinite;
     transform: scale(0.25);
   }
   
@@ -266,24 +270,27 @@ body {
   .c2 {
     animation: animateCloud4 53s ease-in-out infinite;
     transform: scale(0.75);
+    opacity: .95;
+    top: 0%;
   }
   
   
   .c4 {
-    animation: animateCloud3 38s linear infinite;
+    animation: animateCloud3 66s linear infinite;
     transform: scale(0.55);
   }
   
   
   .c5 {
-    animation: animateCloud1 34s linear infinite;
+    animation: animateCloud1 74s linear infinite;
     transform: scale(0.15);
   }
   
   
   .c6 {
-    animation: animateCloud3 45s linear infinite;
+    animation: animateCloud3 58s linear infinite;
     transform: scale(0.45);
+    opacity: .28;
   }
   
   
@@ -294,8 +301,29 @@ body {
   
   
   .c8 {
-    animation: animateCloud2 45s linear infinite;
+    animation: animateCloud2 42s linear infinite;
     transform: scale(0.85);
+    opacity: .85;
+  }
+
+  .c9 {
+    animation: animateCloud2 85s linear infinite;
+    transform:scale(0.38);
+    opacity: .88;
+    z-index: -1
+  }
+
+  .c10 {
+    animation: animateCloud1 30s linear infinite;
+    transform: scale(0.66);
+    opacity: .28;
+  }
+
+  .c11 {
+    animation: animateCloud2 57s linear infinite;
+    transform: scale(0.25);
+    opacity: .5;
+    z-index: -1;
   }
   
   
