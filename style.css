@@ -16,7 +16,7 @@ body {
     top: 0;
     z-index: -1;
     margin-top: 25px;
-    background: linear-gradient(to bottom, #ff5f94, #feb47b);
+    background: linear-gradient(to right, #ff5f94, #feb47b, #1de0fe, #547efc);
     overflow: hidden;
   }
   
@@ -36,10 +36,11 @@ body {
     width: 350px;
     height: 120px;
     top: 50%;
-    transform: traslateY(-50%);
     background: radial-gradient(circle, #80deea, #d7f7fc);
     box-shadow: 10px 10px rgba(25, 25, 25, 0.2);
     border-radius: 100px;
+    border: 2mm double rgba(24, 221, 221);
+    border-top: none;
   }
   
   
@@ -49,10 +50,11 @@ body {
     width: 350px;
     height: 120px;
     top: 50%;
-    transform: traslateY(-50%);
     background:  rgb(214, 217, 217);
     box-shadow: 10px 10px rgba(25, 25, 25, 0.2);
     border-radius: 100px;
+    border: 1mm double rgb(239, 242, 242);
+    border-top: none;
   }
   
   
@@ -62,11 +64,12 @@ body {
     width: 350px;
     height: 120px;
     top: 70%;
-    transform: traslateY(-50%);
     background: #eceff1;
     background: radial-gradient(circle,rgb(24, 221, 221), rgb(206, 241, 241) );
     box-shadow: 10px 10px rgba(25, 25, 25, 0.2);
     border-radius: 100px;
+    border: 2mm double rgba(24, 221, 221);
+    border-top: none;
   }
   
   
@@ -76,6 +79,7 @@ body {
     position: relative;
     display: inline-block;
     border-radius: 50%;
+    border: 1mm double rgba(24, 221, 221);
   }
   
   
@@ -85,7 +89,7 @@ body {
     top: -120px;
     left: -120px;
     z-index: -1;
-    background: linear-gradient(to right, #d7f7fc, #afeaf1);
+    background: linear-gradient(to left, #80deea, #d7f7fc);
   }
   
   
@@ -95,7 +99,7 @@ body {
     top: -70px;
     left: 130px;
     z-index: -1;
-    background: radial-gradient(circle, #afeaf1, #9fe0e9);
+    background: linear-gradient(to right, #80deea, #d7f7fc);
   }
   
   
@@ -104,8 +108,8 @@ body {
     content: "";
     position: relative;
     display: inline-block;
-   
     border-radius: inherit;
+    border: 1mm double rgb(239, 242, 242);
   }
   
   
@@ -136,6 +140,7 @@ body {
     display: inline-block;
     border-radius: inherit;
     z-index: -1;
+    border: 1mm double rgba(24, 221, 221);
   }
   
   
@@ -160,15 +165,16 @@ body {
   
   /* animation */
   
-  
+  /* Cloud group1 floats from top to bottom back to top */
   @keyframes animateCloud1 {
     0% {
-      margin-left: -1000px;
+      margin-left: -1200px;
       margin-top: 75px;
     }
     50% {
-      margin-top: 0px;
+      margin-top: 30px;
     }
+    
     100% {
       margin-left: 100%;
       margin-top: 75px;
@@ -181,11 +187,8 @@ body {
       margin-left: -1000px;
       margin-top: 0px;
     }
-    25% {
-      margin-top: 25px;
-    }
     50% {
-      margin-top: 75px;
+      margin-top: 10px;
     }
     100% {
       margin-left: 100%;
@@ -195,69 +198,104 @@ body {
 
   @keyframes animateCloud3 {
     0% {
-      margin-left: -1000px;
-      margin-top: 75px;
-    }
-    25% {
-      margin-top: 15px;
+      margin-left: -1500px;
+      margin-top: 55px;
     }
     50% {
-      margin-top: -75px;
+      margin-top: -50px;
     }
     100% {
       margin-left: 100%;
-      margin-top: 100px;
+      margin-top: 55px;
+    }
+  }
+
+  @keyframes animateCloud4 {
+    0% {
+      margin-left: -1000px;
+      margin-top: -15px;
+    }
+    50% {
+      margin-top: 20px;
+    }
+    100% {
+      margin-left: 100%;
+      margin-top: -15px;
     }
   }
   
+
+  /* background-gradient */
+
+  @keyframes gradient-animation {
+    0% {
+    background-position: top;
+    background-color: #ff5f94;
+    }
+    25% {
   
+      background-color: #feb47b;
+    }
+    50% {
+      background-position: bottom;
+      background-color: #1de0fe;
+    }
+    75% {
+  
+      background-color: #d7f7fc; 
+    }
+    100% {
+      background-position: top;
+      background-color: #ff5f94;
+    }
+  }
+  
+
   .c1 {
-    animation: animateCloud1 58s linear infinite;
-    transform: scale(0.65);
+    animation: animateCloud1 20s ease-in-out infinite;
+    transform: scale(0.25);
   }
   
   
   .c3 {
-    animation: animateCloud1 50s linear infinite;
-    transform: scale(0.5);
+    animation: animateCloud2 28s ease-in-out infinite;
+    transform: scale(0.25);
   }
   
   
   .c2 {
-    animation: animateCloud2 22s linear infinite;
+    animation: animateCloud4 53s ease-in-out infinite;
     transform: scale(0.75);
   }
   
   
   .c4 {
-    animation: animateCloud1 35s linear infinite;
-  
-  
-    transform: scale(0.25);
+    animation: animateCloud3 38s linear infinite;
+    transform: scale(0.55);
   }
   
   
   .c5 {
-    animation: animateCloud2 24s linear infinite;
+    animation: animateCloud1 34s linear infinite;
     transform: scale(0.15);
   }
   
   
   .c6 {
-    animation: animateCloud3 30s linear infinite;
-    transform: scale(0.5);
+    animation: animateCloud3 45s linear infinite;
+    transform: scale(0.45);
   }
   
   
   .c7 {
-    animation: animateCloud1 39s linear infinite;
-    transform: scale(0.35);
+    animation: animateCloud2 55s linear infinite;
+    transform: scale(0.75);
   }
   
   
   .c8 {
-    animation: animateCloud1 45s linear infinite;
-    transform: scale(0.75);
+    animation: animateCloud2 45s linear infinite;
+    transform: scale(0.85);
   }
   
   
